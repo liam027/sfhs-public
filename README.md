@@ -5,8 +5,9 @@
 
 This repository contains only select, sample code from the Starfinder Hacking Simulator, which is limited to:
 
-- Select Javascript files for the encounter generator (nodes, UI, etc.)
-- Select HTML (view) files
+- Selected Javascript files for the encounter generator (nodes, UI, etc.)
+- Selected HTML view files
+- Selected SCSS stylesheets
 
 **What is the Starfinder Hacking Simulator?**
 
