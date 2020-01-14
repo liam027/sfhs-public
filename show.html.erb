@@ -1,0 +1,36 @@
+<%= render 'layouts/static_header', locals: {title: "ONLINE ACCOUNT DATA",
+line1: "SCRAMBLE_DATA_MINERS[] ",
+line2: "REFORMATTING HYPERDRIVE FOR INCOMING SIGNAL.. ",
+line3: "WAITING FOR YOUR SELECTION, #{current_user.name}... "} %>
+<br>
+
+<div id="encounter-table">
+    <div id="encounter-table-title">/// YOUR ONLINE ENCOUNTERS</div>
+    <div class="encounter-table-switch"><%= link_to '[>> GO LOCAL]', localcomps_path %> </div>
+    <% id = 1 %>       
+    <% @computers.each do |computer| %>
+        <div class="encounter-id"><%= id %></div>
+        <div class="encounter-name "><%= link_to computer.name, computer %></div>
+        <div class="encounter-delete-button "><%= link_to 'DELETE', computer, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        <% id += 1 %>
+    <% end %>
+    <% for i in 1..(5 - @computers.count) %>
+        <div class="encounter-id "><%= id %></div>
+        <div class="encounter-name "><%= link_to "---", computers_url(name: "UNTITLED ENCOUNTER"), method: "POST" %></div>
+        <div class="encounter-delete-button "> --- </div>
+        <% id += 1 %>
+    <% end %>
+
+    <div class="encounter-new-button bright"> -- END DATA -- </div>
+</div>
+<%= link_to "-- NEW ENCOUNTER (BLANK) --", computers_url(name: "UNTITLED ENCOUNTER"), method: "POST", class: 'encounter-large-button' %>
+<%= link_to '-- NEW ENCOUNTER (PRE-GEN TEMPLATE) --', publicrepos_path, class: 'encounter-large-button' %>
+<%= link_to "-- EDIT YOUR ACCOUNT DETAILS --", edit_user_url(@user), class: 'encounter-large-button' %>
+
+
+
+
+
+
+
+

@@ -1,0 +1,231 @@
+@import 'globals';
+/* static pages specific styles (home, tutorial, faq, etc. */
+
+#static-screen-terminal {
+    height: 100%;
+    padding: 0px 5px;
+}
+
+#static-title-bar {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 1;
+    grid-template-columns: 0.5fr 17fr 3fr;
+}
+
+#static-title {
+    color: $borderBold;
+    font-size: 2em;
+    line-height: 1.25em;
+}
+
+.beta-tags {
+    display: block;
+    text-align: center;
+    font-size: 0.75em;
+    animation: pulse 1s ease-in-out infinite alternate;
+    transition: color 1s ease;
+}
+
+@keyframes pulse {
+    0% {color: black;}
+    100% { color: $trimColor;}
+}
+
+.bright {
+    color: $borderBold;
+}
+
+.news-header {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.update-list {
+    list-style-type: square;
+    margin-left: 40px;
+}
+
+.home-link {
+    text-decoration: underline;
+}
+
+.logo-box {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-container {
+    display: block;
+    float: right;
+}
+.logo {
+    width: 30px;
+    height: 30px;
+    margin: 5px auto;
+}
+
+.log-button {
+    display: block;
+    float: right;
+    justify-content: center;
+    text-align: center;
+    line-height: 40px;
+    padding: 0px 5px;
+}
+
+.home-page-large-button {
+    display: block;
+    border: 2px solid $trimColor;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 0px;
+    margin: 10px auto;
+    max-width: 800px;
+}
+
+.home-page-large-button:hover {
+    background-color: $highlightColor;
+    border-color: $borderBold;
+    color: $borderBold;
+}
+
+#static-dotted-break {
+    display: block;
+    border-bottom: 2px dotted $trimColor;
+    width: 100%;
+}
+
+.static-terminal-line {
+    display: block;
+}
+
+.static-terminal-link {
+    display: block;
+    font: bold;
+}
+
+.static-terminal-line-item {
+    display:block;
+    position: relative;
+}
+  
+#static-page-cursor {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -10px;
+    width: 0;
+    background: black;
+    /* This animation is commented out to show what the animation will be. It will be applied by JS */
+    /*animation: typing 1s steps(17, end) 1, blinking 1s step-end infinite; */
+    box-sizing: border-box;
+    border-left: .75em solid;
+}
+
+#computer-index-table {
+    box-sizing: content-box;
+    width: calc(100vw - 48px);
+    border: 2px dotted $trimColor;
+    margin: 10px auto;
+}
+
+#computer-index-th {
+    text-decoration: underline;
+}
+
+#computer-index-td {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.static-break-header {
+    display: inline-block;
+    font-weight: bold;
+    color: $borderBold;
+}
+
+.tutorial-link-to-top {
+    display: inline-block;
+    float: right;
+    color: $borderBold;
+}
+
+#tut-toc {
+    list-style-type: square;
+}
+
+#sub-toc-1 {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+#sub-toc-2 {
+    list-style-type: square;
+    margin-left: 40px;
+}
+
+.tut-bp {
+    margin-left: 20px;
+}
+
+.tutorial-image {
+    display: block;
+    max-width: 60%;
+    padding: 10px;
+    margin: auto;
+}
+
+.tutorial-node-frame {
+    width: 100%;
+    height: 12vw;
+    display:    grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 1fr 10fr;
+    margin-bottom: 20px;
+    margin: 20px 0px;
+}
+
+.tutorial-node-img-container {
+    display: flex;
+    grid-row: 1 / 3;
+    border: 1px dotted $trimColor;
+}
+
+.tutorial-node-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 70%;
+    max-width: 70%;
+    margin: auto;
+}
+
+.tutorial-node-type {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    color: $borderBold;
+    margin-left: 10px;
+}
+
+.tutorial-node-desc {
+    display: inline-grid;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+.tutorial-node-bullets {
+    list-style-type: square;
+}
+
+.node-bp {
+    margin-left: 30px;
+}
+
+.update-block {
+    width: 98%;
+    margin: auto;
+}
+

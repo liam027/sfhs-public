@@ -1,0 +1,283 @@
+<a href="#linktotop"></a>
+<div id="static-screen-terminal">
+  <%= render 'layouts/static_header', locals: {title: "TUTORIAL",
+  line1: "REQUESTING ACCESS SFHS-TUTORIAL... ",
+  line2: "LOAD: SFHS-TUTORIAL.PARSE(HYPERTEXT) ",
+  line3: "SYSTEM READY TO LEARN... "} %>
+  <br>
+  <strong><span class="static-terminal-line-item bright">> TUTORIAL TABLE OF CONTENTS</span></strong>
+  <ul id="tut-toc">
+     <li class="tut-bp"><a href="#basics">BASICS</a></li>
+    <ul id="sub-toc-1">
+      <li class="tut-bp"><a href="#workspace">WORKSPACE</a></li>
+      <li class="tut-bp"><a href="#workingwithnodes">WORKING WITH NODES</a></li>
+    </ul>
+    <li class="tut-bp"><a href="#typesofnodes">TYPES OF NODES</a></li>
+    <ul id="sub-toc-1">
+      <li class="tut-bp"><a href="#entry">ENTRY</a></li>
+      <li class="tut-bp"><a href="#directory">DIRECTORY</a></li>
+      <li class="tut-bp"><a href="#firewall">FIREWALL</a></li>
+      <li class="tut-bp"><a href="#rootnode">ROOT</a></li>
+      <li class="tut-bp"><a href="#modules">MODULES</a></li>
+      <ul id="sub-toc-2">
+        <li class="tut-bp"><a href="#file">DATA</a></li>
+        <li class="tut-bp"><a href="#control">CONTROL</a></li>
+        <li class="tut-bp"><a href="#security">SECURITY</a></li>
+      </ul>
+      <li class="tut-bp"><a href="#traps">TRAPS</a></li>
+      <ul id="sub-toc-2">
+        <li class="tut-bp"><a href="#alarm">ALARM</a></li>
+        <li class="tut-bp"><a href="#feedback">FEEDBACK</a></li>
+        <li class="tut-bp"><a href="#shockgrid">SHOCKGRID</a></li>
+        <li class="tut-bp"><a href="#lockout">LOCKOUT</a></li>
+        <li class="tut-bp"><a href="#wipe">WIPE</a></li>
+      </ul>
+      <li class="tut-bp"><a href="#special">SPECIAL</a></li>
+      <ul id="sub-toc-2">
+        <li class="tut-bp"><a href="#reveal">REVEAL</a></li>
+        <li class="tut-bp"><a href="#diagnose">DIAGNOSE</a></li>
+        <li class="tut-bp"><a href="#trace">TRACE</a></li>
+      </ul>
+    </ul>
+  </ul>
+  <br>
+  <br>
+  
+  <a name="basics"></a>
+  <span id="static-dotted-break"></span>
+  <div class="static-break-header bright">> BASICS</div>
+  <a href="#linktotop" class="tutorial-link-to-top">BACK TO TOP</a>
+  <span id="static-dotted-break"></span>
+  <br>
+
+  <a name="workspace"></a>
+  <div class="static-break-header">> THE WORKSPACE</div>
+  <a href="#linktotop" class="tutorial-link-to-top">BACK TO TOP</a>
+  <span id="static-dotted-break"></span>
+  <div>
+      <%= image_tag("tutorial-workspaces.png", class: "tutorial-image") %>
+  </div>
+
+  <a name="workingwithnodes"></a>
+  <div class="static-break-header">> WORKING WITH NODES</div>
+  <a href="#linktotop" class="tutorial-link-to-top">BACK TO TOP</a>
+  <span id="static-dotted-break"></span>
+  <div>
+      <%= image_tag("tutorial-node-commands.png", class: "tutorial-image") %>
+  </div>
+
+  <a name="typesofnodes"></a>
+  <span id="static-dotted-break"></span>
+  <div class="static-break-header">> TYPES OF NODES</div>
+  <a href="#linktotop" class="tutorial-link-to-top">BACK TO TOP</a>
+  <span id="static-dotted-break"></span>
+
+  <a name="entry"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("entry.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">ENTRY</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">REPRESENTS THE USER'S ENTRY POINT INTO THE SYSTEM</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="directory"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("dir.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">DIRECTORY</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+      <li class="node-bp">THE MOST BASIC NODE.</li>
+        <li class="node-bp">USED AS A CONTAINER FOR OTHER NODES.</li>
+        <li class="node-bp">PROTECT OTHER NODES BEHIND IT BY PARENTING THEM TO IT.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="firewall"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("firewall.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">FIREWALL</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">FIREWALLS ARE MORE DIFFICULT TO HACK THAN OTHER DIRECTORIES</li>
+        <li class="node-bp">PROTECT IMPORTANT NODES BEHIND FIREWALL NODES</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="rootnode"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("root.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">ROOT</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+      <li class="node-bp">VERY DIFFICULT TO HACK.</li>
+        <li class="node-bp">HACKING PROVIDES THE USER WITH ROOT ACCESS PRIVILEGE.</li>
+        <li class="node-bp">ROOT ACCESS PRIVILEGE MAKES HACKING ALL OTHER SYSTEM NODES EASY.</li>
+        <li class="node-bp">PROTECT VERY IMPORTANT NODES BEHIND THE ROOT NODE.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <a name="modules"></a>
+  <span id="static-dotted-break"></span>
+  <div class="static-break-header">> MODULES</div>
+  <a href="#linktotop" class="tutorial-link-to-top">BACK TO TOP</a>
+  <span id="static-dotted-break"></span>
+
+  <a name="file"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("file.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">DATA</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">CONTAIN WRITTEN TEXT FOR PLAYERS TO DISCOVER.</li>
+        <li class="node-bp">SELECT THE NODE AND USE THE MODIFY BUTTON IN THE HOTBAR.</li>
+        <li class="node-bp">A PROMPT WILL APPEAR IN WHICH YOU CAN TYPE OR PASTE.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="control"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("control.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">CONTROL</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">USED TO REPRESENT DIFFERENT OBJECTS THE USER CAN INTERACT WITH.</li>
+        <li class="node-bp">DIFFERENT ICONS AVAILABLE, BUT ALL WORK THE SAME WAY.</li>
+        <li class="node-bp">GM CAN MODIFY THE CONTENTS (LIKE A FILE) TO DESCRIBE WHAT HAPPENS WHEN THE NODE IS USED.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="security"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("security.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">SECURITY</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">INCREASES THE HACKING DIFFICULTY OF ALL OTHER NODES IN THE NETWORK.</li>
+        <li class="node-bp">THE BONUS PROVIDED IS BASED ON THE TIER OF THE SECURITY NODE. </li>
+        <li class="node-bp">HACKING IT WILL DISABLE IT AND REMOVE THE BONUS PROVIDED.</li>
+        <li class="node-bp">MULTIPLE SECURITY NODES DON'T STACK.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="traps"></a>
+  <span id="static-dotted-break"></span>
+  <div class="static-break-header">> TRAPS</div>
+  <a href="#linktotop" class="tutorial-link-to-top">BACK TO TOP</a>
+  <span id="static-dotted-break"></span>
+
+  <a name="alarm"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("alarm.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">ALARM</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">WHEN TRIGGERED, ACTIVATES AN ALARM.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="feedback"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("feedback.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">FEEDBACK</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">CRITICALLY FAILING WHEN HACKING THE PROTECTED NODE TRIGGERS A FEEDBACK</li>
+        <li class="node-bp">CRITICAL FAILURE IS FAILING THE HACK CHECK BY 5 OR MORE.</li>
+        <li class="node-bp">A VIRUS IS INJECTED INTO THE USER'S SOFTWARE.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="shockgrid"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("shockgrid.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">SHOCKGRID</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">WHEN TRIGGERED RELEASE A NOVA OF ELECTRICITY THAT HARMS THE USER</li>
+        <li class="node-bp">FIRST DISCHARGE WILL BE IN STUN MODE.</li>
+        <li class="node-bp">IS ONLY TRIGGERED AFTER A NUMBER OF FAILED HACK ATTEMPTS ARE DETECTED.</li>
+        <li class="node-bp">ONCE TRIGGERED, WILL DISCHARGE IN LETHAL MODE.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="lockout"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("lockout.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">LOCKOUT</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">LOCKS OUT USER FROM THE NETWORK</li>
+        <li class="node-bp">IS ONLY TRIGGERED AFTER A NUMBER OF FAILED HACK ATTEMPTS ARE DETECTED.</li>
+        <li class="node-bp"> (TODO) TRIGGERING LOCKOUT WILL NOT STOP THE SIMULATOR. THE GM SHOULD DECIDE WHAT HAPPENS ONCE LOCKOUT IS TRIGGERED.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="wipe"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("wipe.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">WIPE</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">WIPES THE CONTENTS OF ALL DATA NODES IN THE NETWORK</li>
+        <li class="node-bp">IS ONLY TRIGGERED AFTER A NUMBER OF FAILED HACK ATTEMPTS ARE DETECTED</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="special"></a>
+  <span id="static-dotted-break"></span>
+  <div class="static-break-header">> SPECIAL</div>
+  <a href="#linktotop" class="tutorial-link-to-top">BACK TO TOP</a>
+  <span id="static-dotted-break"></span>
+
+  <a name="reveal"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("reveal.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">REVEAL</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">SHOWS ALL OF THE HIDDEN NODES IN THE NETWORK.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="diagnose"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("diagnose.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">DIAGNOSE</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">IF THE DCS ARE NOT VISIBLE TO THE PLAYERS, HACKING THIS NODE WILL REVEAL THE DC FOR ALL NODES IN THE NETWORK.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a name="trace"></a>
+  <div class="tutorial-node-frame">
+    <div class="tutorial-node-img-container"><%= image_tag("trace.png", class: "tutorial-node-img")%></div>
+    <div class="tutorial-node-type">TRACE</div>
+    <div class="tutorial-node-desc">
+      <ul class="tutorial-node-bullets">
+        <li class="node-bp">WHEN TRIGGERED, SENDS A WARNING MESSAGE AND STARTS A COUNTDOWN.</li>
+        <li class="node-bp">WHEN THE COUNTDOWN REACHES ZERO, ANOTHER EFFECT IS TRIGGERED.</li>
+        <li class="node-bp">BOTH THE WARNING AND FINAL EFFECT CAN BE CUSTOMIZED.</li>
+      </ul>
+    </div>
+  </div>
+    
+  <%= render 'layouts/static_footer', locals: {title: "END OF FILE"} %>
+</div>
+</div>
