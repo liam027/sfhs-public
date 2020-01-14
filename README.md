@@ -26,6 +26,6 @@ E-mail: [starfinderhackingsimulator@gmail.com](mailto:starfinderhackingsimulator
 
 You can see my personal site and other my other projects here:
 
-https://liam027.github.io/portfolio-site/
+https://liamharland.ca
 
 
