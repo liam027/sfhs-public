@@ -1,4 +1,3 @@
-
 class Node{
 
   constructor() {
@@ -339,39 +338,39 @@ class Node{
     canvas.appendChild(nodeLine);
   }
 
-  //#TODO refactor so this isn't repeated and is cleaner
-  update_node_line_origin_coordinates(){
+  update_node_line_origin_coordinates() {
+    let coords = this.getLineEndPoint(this)
+    this.nodeLine.setAttribute("x1", coords.x.toString());
+    this.nodeLine.setAttribute("y1", coords.y.toString());
+  }
+
+  update_node_line_parent_coordinates() {
+    let coords = this.getLineEndPoint(this.parent)
+    this.nodeLine.setAttribute("x2", coords.x.toString());
+    this.nodeLine.setAttribute("y2", coords.y.toString());
+  }
+
+  getLineEndPoint(target) {
+    let coords = {}
     let nodeBoundingBox = this.element.getBoundingClientRect();
     let screenFrameBoundingBox = screenFrame.getBoundingClientRect();
     let offsetX = nodeBoundingBox.width / 2 - screenFrameBoundingBox.x;
     let offsetY = nodeBoundingBox.height / 2 - screenFrameBoundingBox.y;
-    let newX1 = this.element.getBoundingClientRect().x + offsetX;
-    let newY1 = this.element.getBoundingClientRect().y + offsetY;
-    this.nodeLine.setAttribute("x1", newX1.toString());
-    this.nodeLine.setAttribute("y1", newY1.toString());
+    coords.x = target.element.getBoundingClientRect().x + offsetX;
+    coords.y = target.element.getBoundingClientRect().y + offsetY;
+    return coords
   }
 
-  update_node_line_parent_coordinates(){
-    let nodeBoundingBox = this.element.getBoundingClientRect();
-    let screenFrameBoundingBox = screenFrame.getBoundingClientRect();
-    let offsetX = nodeBoundingBox.width / 2 - screenFrameBoundingBox.x;
-    let offsetY = nodeBoundingBox.height / 2 - screenFrameBoundingBox.y;
-    let newX2 = this.parent.element.getBoundingClientRect().x + offsetX;
-    let newY2 = this.parent.element.getBoundingClientRect().y + offsetY;
-    this.nodeLine.setAttribute("x2", newX2.toString());
-    this.nodeLine.setAttribute("y2", newY2.toString());
-  }
-
-  update_node_line_mouse_coordinates(mousePosX, mousePosY){
+  update_node_line_mouse_coordinates(mousePosX, mousePosY) {
     this.nodeLine.setAttribute("x2", mousePosX.toString());
     this.nodeLine.setAttribute("y2", mousePosY.toString());
   }
 
-  getParentClass(){
+  getParentClass() {
     return Object.getPrototypeOf(this.constructor).name
   }
 
-  hack_success(){
+  hack_success() {
     post_message(`${this.name} HACK SUCCESSFUL.`);
     this.set_lock(false);
     this.reveal_child_nodes();
@@ -394,16 +393,16 @@ class Node{
     show_basic_alert("HACK FAILED!");
   }
 
-  set_main_icon(path){
+  set_main_icon(path) {
     this.element.querySelector(".node-icon").src = path;
   }
-  set_visibility_icon(path){
+  set_visibility_icon(path) {
     this.element.querySelector(".node-vis-icon").src = path;
   }
-  set_tier_icon(value){
+  set_tier_icon(value) {
     this.element.querySelector(".node-tier-icon").innerHTML = `T${value}`;
   }
-  set_dc_icon(value){
+  set_dc_icon(value) {
     this.element.querySelector(".node-dc-icon").innerHTML = `DC${value}`;
   }
 
