@@ -10,26 +10,24 @@ function mouseDragElement(node) {
     node.element.onmousedown = dragMouseDown;
   }
 
-  function dragMouseDown(e) {
-      e = e || window.event;
-      e.preventDefault();
+  function dragMouseDown(event) {
+      event.preventDefault();
       // get the mouse cursor position at startup:
-      oldPos = current_mouse_pos(e);
-      document.onmouseup = function(e) {
-          closeMouseDragElement(e);
+      oldPos = current_mouse_pos(event);
+      document.onmouseup = function(event) {
+          closeMouseDragElement(event);
       };
       // call a function whenever the cursor moves:
       document.onmousemove = elementMouseDrag;
   }
 
-  function calculate_position(e) {
-    e = e || window.event;
-    e.preventDefault();
+  function calculate_position(event) {
+    event.preventDefault();
     // calculate the new cursor position and update the 'old position'
     newPos = [];
-    newPos[0] = [oldPos[0] - e.clientX];
-    newPos[1] = [oldPos[1] - e.clientY];
-    oldPos = current_mouse_pos(e);
+    newPos[0] = [oldPos[0] - event.clientX];
+    newPos[1] = [oldPos[1] - event.clientY];
+    oldPos = current_mouse_pos(event);
 
     // get what the element's new position will be:
     let calcPos = [];
@@ -38,13 +36,13 @@ function mouseDragElement(node) {
     return calcPos;
   }
 
-  function elementMouseDrag(e) {
-    calcPos = calculate_position(e);
+  function elementMouseDrag(event) {
+    calcPos = calculate_position(event);
     set_final_node_position(node, calcPos);
     refresh_node_lines(node);
   }
 
-  function closeMouseDragElement(e) {
+  function closeMouseDragElement(event) {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
@@ -57,10 +55,10 @@ function mouseDragElement(node) {
     refresh_node_lines(node);
   }
 
-  function current_mouse_pos(e) {
+  function current_mouse_pos(event) {
     let mousePos = [];
-    mousePos[0] = e.clientX;
-    mousePos[1] = e.clientY;
+    mousePos[0] = event.clientX;
+    mousePos[1] = event.clientY;
     return mousePos;
   }
 
