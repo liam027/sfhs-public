@@ -25,7 +25,7 @@ E-mail: [starfinderhackingsimulator@gmail.com](mailto:starfinderhackingsimulator
 
 **Who made this?**
 
-You can see my personal site and other my other projects here:
+You can see my personal site and other projects here:
 
 https://liamharland.ca
 
